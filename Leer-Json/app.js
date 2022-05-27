@@ -1,2 +1,5 @@
-const libros =require('./archivos/libros.json');
-console.log(libros.libro)
+const fs =require('fs');
+
+fs.readFile('./archivos/libros.json', (error, datos)=>{
+    console.log(JSON.parse(datos).autor);
+})
