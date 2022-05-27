@@ -1,9 +1,10 @@
 const fs = require('fs');
 
-fs.appendFile('./archivos/texto-nuevo.txt', '\n   Nuevos datos',(error)=>{
-    if (error){
-        console.log('error al escribir archivo');
+
+fs.copyFile('./archivos/archivo_original.txt', './archivos/archivo_nuevo.txt', (error)=>{
+    if (error) {
+        console.log('error al copiar')
     } else {
-        console.log('archivo modificado exitosamente');
+        console.log('copia exitosa')
     }
 })
