@@ -3,11 +3,17 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  res.send('informacion dinamica');
+  res.render('dinamico');
 });
 
-router.get('/:datoURL', (req,res)=>{
-  res.send('informacion dinamica: '+ req.params.datoURL);
+router.get('/:datoURL/:ID', (req,res)=>{
+  res.render('dinamico', {
+    datos: {
+      titulo : req.params.datoURL,
+      ID: req.params.ID,
+    }
+  });
+  //res.send('informacion dinamica: '+ req.params.datoURL);
 })
 
 module.exports = router;
